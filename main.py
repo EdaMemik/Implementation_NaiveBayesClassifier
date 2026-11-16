@@ -6,15 +6,16 @@ A simple menu for training and inspecting
   the Naive Bayes Classifier implemented in lab6.py
 """
 
-import lab6
+import NaiveBayesClassifier
 
 """
 The relative path to training directory
 """
+
 TRAINING_DATA_DIRECTORY = "movie_reviews/"
 
 
-def inspect_probabilities(classifier: lab6.BayesClassifier):
+def inspect_probabilities(classifier: NaiveBayesClassifier.BayesClassifier):
     """Print probabilities for words for manual inspection.
 
     Arguments:
@@ -38,7 +39,7 @@ def inspect_probabilities(classifier: lab6.BayesClassifier):
     print("Exiting the probability viewer")
 
 
-def test_classifier(classifier: lab6.BayesClassifier):
+def test_classifier(classifier: NaiveBayesClassifier.BayesClassifier):
     """Manually test how the classifier classifies sentences.
 
     Arguments:
@@ -55,7 +56,7 @@ def test_classifier(classifier: lab6.BayesClassifier):
 
 def main():
     """Train the classifier if not already trained, then run the menu."""
-    classifier = lab6.BayesClassifier()
+    classifier = NaiveBayesClassifier.BayesClassifier()
     classifier.setup(TRAINING_DATA_DIRECTORY)
     choice = input('What should we do with our classifier?\n 1 to inspect probabilities\n 2 to classify text\n')
     if choice == '1':
